@@ -7,9 +7,13 @@ class GrocerySearch extends StatefulWidget {
 
   @override
   State<GrocerySearch> createState() => _GrocerySearchState();
+  
+  
 }
 
 class _GrocerySearchState extends State<GrocerySearch> {
+  String? _searchingValue;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,8 +21,10 @@ class _GrocerySearchState extends State<GrocerySearch> {
       child: Column(
         children: [
           SearchBar(
-            controller: TextInputControl,
-            trailing: Icon
+            leading: Icon(Icons.search),
+            onChanged: (String value){
+              _searchingValue = value;
+            } ,
           )
         ],
       )
